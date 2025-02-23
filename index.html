@@ -386,6 +386,11 @@
     }
     
     function downloadCSV() {
+      // Display confirmation alert
+      if (!confirm("Do you want to continue and submit")) {
+        return;
+      }
+      
       let table = document.getElementById("attendanceList");
       let rows = table.getElementsByTagName("tr");
       let csvContent = "Sr. No.,Date,Time Slot,Subject,Faculty Name,Division,Mentor Name,Student Name\n";
